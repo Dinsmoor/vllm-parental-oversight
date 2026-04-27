@@ -12,7 +12,8 @@ A lightweight logging proxy and daily safety-review system for a local vLLM serv
 
 **Python 3.10+** (uses `match`-free but relies on `X | Y` type hints and `date.fromisoformat`).
 
-**pip dependencies:**
+**python dependencies:**
+(either in a venv or install these via your system packages via python3-whatever)
 ```
 pip install httpx uvicorn starlette
 ```
