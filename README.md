@@ -85,6 +85,14 @@ To have the user service start at boot without needing to log in first (recommen
 sudo loginctl enable-linger $USER
 ```
 
+If you need to manage the service as a user, use:
+```bash
+systemctl --user status llm-safety    # check status
+systemctl --user stop llm-safety      # stop
+systemctl --user restart llm-safety   # restart
+journalctl --user -u llm-safety -f    # follow logs 
+```
+
 ## Manual review
 
 To review a specific date without waiting for the scheduler:
