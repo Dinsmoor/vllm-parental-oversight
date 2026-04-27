@@ -1,0 +1,22 @@
+[Unit]
+Description=Kids LLM Safety Proxy
+# Wait for vLLM — adjust the service name if yours differs
+After=network.target
+
+[Service]
+Type=simple
+# Edit these two lines to match your setup
+User=tyler
+WorkingDirectory=/home/tyler/llm_safety
+
+ExecStart=/usr/bin/python3 /home/tyler/llm_safety/run.py
+Restart=on-failure
+RestartSec=10
+
+# Log to journald — view with: journalctl -u llm-safety -f
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+# System service: starts at boot for all users
+WantedBy=multi-user.target

@@ -1,0 +1,18 @@
+[Unit]
+Description=Kids LLM Safety Proxy
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/llm_safety
+
+ExecStart=/usr/bin/python3 %h/llm_safety/run.py
+Restart=on-failure
+RestartSec=10
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+# User service: starts on login (or at boot with lingering enabled)
+WantedBy=default.target
