@@ -27,24 +27,7 @@ pip install httpx uvicorn starlette
 
 ## Setup
 
-1. Copy and edit the config:
-
-```python
-# config.py
-PROXY_PORT   = 8001
-VLLM_URL     = "http://localhost:8000"
-LOG_FILE     = "logs/kids_conversations.jsonl"
-REVIEW_MODEL = "qwen3coder"
-DIGEST_TIME  = "08:00"       # 24h local time
-EMAIL_ENABLED = True
-EMAIL_FROM   = "proxy@home.lan"
-EMAIL_TO     = ["parent@example.com"]
-SMTP_HOST    = "localhost"
-SMTP_PORT    = 25
-SMTP_USER    = ""
-SMTP_PASSWORD = ""
-SMTP_USE_TLS  = False
-```
+1. Edit ./config.py with your settings for vLLM and email provider information.
 
 2. Point the client at the proxy port instead of vLLM directly. For Qwen Code, set the base URL to `http://<server>:8001`.
 
